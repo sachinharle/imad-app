@@ -13,7 +13,6 @@ button.onclick = function(){
             if(request.status === 200){
                 var counter = request.responseText;*/
                 var span = document.getElementById('count');
-                console.log('count');
                 span.innerHTML = counter.toString();/*
             }
         }
