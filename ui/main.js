@@ -1,10 +1,8 @@
 //counter code
-//var counter = 0;
-
 var button = document.getElementById('counter');
-var marginLeft = 0;
 
 button.onclick = function(){
+    
     //create request object
     var request = new XMLHttpRquest();
     
