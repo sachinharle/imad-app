@@ -1,3 +1,30 @@
+/* part of URL
+var names = [];
+app.get('/submit-name/:name', function (req, res) {
+    //Get the name fron request
+    var name = req.params.name;
+    
+    names.push(name);
+    //JSON: Javascript Object Notation
+  res.send(JSON.stringify(names));
+});
+*/
+/*query parameter string*/
+var names = [];
+app.get('/submit-name/:name', function (req, res) {
+    //Get the name fron request
+    var name = req.query.name;
+    
+    names.push(name);
+    //JSON: Javascript Object Notation
+  res.send(JSON.stringify(names));
+});
+
+
+
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
@@ -105,33 +132,7 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
-/* part of URL
-var names = [];
-app.get('/submit-name/:name', function (req, res) {
-    //Get the name fron request
-    var name = req.params.name;
-    
-    names.push(name);
-    //JSON: Javascript Object Notation
-  res.send(JSON.stringify(names));
-});
-*/
-/*query parameter string*/
-var names = [];
-app.get('/submit-name/:name', function (req, res) {
-    //Get the name fron request
-    var name = req.query.name;
-    
-    names.push(name);
-    //JSON: Javascript Object Notation
-  res.send(JSON.stringify(names));
-});
 
-
-
-app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
