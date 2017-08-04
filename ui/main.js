@@ -10,7 +10,7 @@ button.onclick = function(){
     
     //Capture the responce and store it in a variable
     request.onreadystatechange = function (){
-        if(request.readyState===XMLHttpRquest.DONE)
+        if(request.readyState===XMLHttpRquest.DONE){
             //take some action
             if(requestr.status===200){
                 var counter = request.responseText;
@@ -19,6 +19,7 @@ button.onclick = function(){
             }
         }
         //Not done yet
+    };
     //Render the variable in the correct span
       //Make request to counter point
       request.open('GET','http://sachinharle.imad.hasura-app.io/counter', true);
