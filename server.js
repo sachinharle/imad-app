@@ -1,3 +1,14 @@
+
+app.get('/ui/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+var express = require('express');
+var morgan = require('morgan');
+var path = require('path');
+
+var app = express();
+app.use(morgan('combined'));
+//----------------
 /* part of URL
 var names = [];
 app.get('/submit-name/:name', function (req, res) {
@@ -19,19 +30,7 @@ app.get('/submit-name/:name', function (req, res) {
     //JSON: Javascript Object Notation
   res.send(JSON.stringify(names));
 });
-
-
-
-app.get('/ui/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
-var express = require('express');
-var morgan = require('morgan');
-var path = require('path');
-
-var app = express();
-app.use(morgan('combined'));
-
+//--------------------------
 var articles ={
     'article-one': {
         title: 'Article One | Sachin Harle',
