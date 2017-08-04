@@ -1,18 +1,15 @@
-//output on console
-console.log('Loaded!');
-//write an alert
-alert('Hi Sachin, want to proceed');
-//change the text from element "main-text"
-var element = document.getElementById('main-text');
-element.innerHTML = 'New value';
+//counter code
+var counter = 0;
 
-//Move the image
-var img = document.getElementById('madi');
-var marginLeft =0;
-function moveRight(){
-    marginLeft += 1;
-    img.style.marginLeft = marginLeft + 'px';
-}
-img.onclick = function(){
-    var interval = setInterval(moveRight,50);
+var button = document.getElementById('counter');
+var marginLeft = 0;
+
+button.onclick = function(){
+    //Make request to counter point
+    //Capture the responce and store it in a variable
+    
+    //Render the variable in the correct span
+    counter++;
+    var span = document.getElementById('count');
+    span.innerHTML = counter.toString();
 };
