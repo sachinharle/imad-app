@@ -102,7 +102,7 @@ var names = [];
     res.send(JSON.stringify(names));
 });*/
 app.get('/submit-name/:name',function(req, res){
-    var name = req.query.name;
+    var name = req.params.name;
     names.push(name);
     //JSON Javascript Object Notation
     res.send(JSON.stringify(names));
