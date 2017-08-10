@@ -135,7 +135,8 @@ app.get('/submit-name',function(req, res){
 app.get('/articles/:articleName', function (req, res){
     //articleName == article-one
     //articles[articleName] =={} content object for article-one
-    var articlename = req.params.articleName;
+   // var articlename = req.params.articleName;
+    var articlename = 'articleone';
    pool.query('SELECT * FROM article WHERE "title" =' + articlename, function(err, result){
       if(err){
           res.status(500).send(err.toString());
