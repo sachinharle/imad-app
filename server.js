@@ -137,16 +137,16 @@ app.get('/articles/:articleName', function (req, res){
     //articles[articleName] =={} content object for article-one
     var articlename = req.params.articleName;
    pool.query("SELECT * FROM article WHERE title =" + articlename, function(err, result){
-      if(err){
+      /*if(err){
           res.status(500).send(err.toString());
-      } else {
+      } else {*/
           if(result.rows.length === 0){
               res.status(404).send('Article not found');
           } else {
               var articleData = result.rows[0];
               res.send(createTemplate(articleData));
           }
-      }
+    //  }
    });
 });
 
